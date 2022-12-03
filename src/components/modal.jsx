@@ -1,29 +1,18 @@
+import React from "react";
+import { Modalstyle, Outterstyle } from "./styles/modal";
+import { Button } from "@mui/material";
+
 export default function Modal({ opened }) {
-    const modalstyle = {
-        position: "relative",
-        left: "550px",
-        width: "250px",
-        heigth: "200px",
-        background: "white",
-    };
-
-    const outterstyle = {
-        width: "100%",
-        heigth: "100%",
-        background: "rgba(0,0,0,.5)",
-        position: "absolute",
-    };
-
     const [modalOpened, setModalOpened] = opened;
 
     if (!modalOpened) return <></>;
 
     return (
-        <div style={outterstyle}>
-            <div style={modalstyle}>
-                <button onClick={() => setModalOpened(false)}>X</button>
+        <Outterstyle>
+            <Modalstyle>
+                <Button onClick={() => setModalOpened(false)}>X</Button>
                 <h1>Modal</h1>
-            </div>
-        </div>
+            </Modalstyle>
+        </Outterstyle>
     );
 }

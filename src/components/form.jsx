@@ -1,8 +1,9 @@
-import { useState } from "react";
+import React from "react";
 import Modal from "./modal";
+import Form from "./styles/form";
 
 export default function Formulario({ children, textSubmit }) {
-    const [modalOpened, setModalOpened] = useState(false);
+    const [modalOpened, setModalOpened] = React.useState(false);
 
     async function submitForm(event) {
         event.preventDefault();
@@ -15,10 +16,10 @@ export default function Formulario({ children, textSubmit }) {
     return (
         <>
             <Modal opened={[modalOpened, setModalOpened]} />
-            <form onSubmit={submitForm}>
+            <Form onSubmit={submitForm}>
                 {children}
                 <button>{textSubmit}</button>
-            </form>
+            </Form>
         </>
     );
 }

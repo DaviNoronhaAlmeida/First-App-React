@@ -1,19 +1,21 @@
+import React from "react";
 import "./App.css";
 import Formulario from "./components/form";
+import Input from "./components/styles/input";
 
 function App() {
     return (
         <div className="App">
             <header>
                 <Formulario textSubmit="criar">
-                    <input
+                    <Input
                         name="email"
                         type="email"
                         required
                         placeholder="E-mail"
                     />
-                    <input name="name" required placeholder="Name" />
-                    <input
+                    <Input name="name" required placeholder="Name" />
+                    <Input
                         name="password"
                         type="password"
                         required
