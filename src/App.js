@@ -1,28 +1,20 @@
 import React from "react";
 import "./App.css";
-import Formulario from "./components/form";
-import Input from "./components/styles/input";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Login from "./components/login";
+import Update from "./components/update";
+import Register from "./components/register";
 
 function App() {
     return (
         <div className="App">
-            <header>
-                <Formulario textSubmit="criar">
-                    <Input
-                        name="email"
-                        type="email"
-                        required
-                        placeholder="E-mail"
-                    />
-                    <Input name="name" required placeholder="Name" />
-                    <Input
-                        name="password"
-                        type="password"
-                        required
-                        placeholder="Password"
-                    />
-                </Formulario>
-            </header>
+            <BrowserRouter>
+                <Routes>
+                    <Route element={<Login />} path="/" />
+                    <Route element={<Update />} path="/update" />
+                    <Route element={<Register />} path="/register" />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }
